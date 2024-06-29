@@ -1,0 +1,156 @@
+<div class="clientes">
+  <app-aside/>
+    <div class="p-4 xl:ml-80">
+      <app-menu [actual]="cliente" [actuales]="clientes"></app-menu>
+      <!-- component -->
+
+      <section class="py-1 bg-blueGray-50">
+      <div class="w-full  mb-12 xl:mb-0 px-8 mx-auto mt-8">
+        <div class="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-lg rounded ">
+          <div class="rounded-t mb-0 px-4 py-3 border-0 ">
+            <div class="flex flex-wrap items-center">
+              <div class="relative w-full px-4 max-w-full flex-grow flex-1">
+                <h3 class="font-bold text-2xl text-rojo ">Registro de Clientes</h3>
+              </div>
+              <div class="relative w-full px-4 max-w-full flex-grow flex-1 text-right">
+                <!-- BUSQUEDA-->
+                <div class="flex items-center justify-center ">
+                  <div class="relative flex h-10 w-full min-w-[200px] max-w-[26rem]">
+                      <input id="file-upload" type="file" class="peer hidden" required />
+                      <label
+                          for="file-upload"
+                          class="absolute right-1 top-1 z-10 select-none rounded bg-red-500 py-2 px-4 text-center align-middle font-sans text-xs font-bold uppercase text-white transition-all hover:shadow-lg hover:bg-red-600 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85]"
+                      >
+                          Buscar
+                      </label>
+                      <div class="relative flex-1">
+                          <input
+                              type="text"
+                              class="relative peer h-full w-full rounded-[7px] border border-blue-gray-200 bg-transparent px-3 py-2.5 pr-20 font-sans text-sm font-normal text-blue-gray-700 outline outline-0 transition-all placeholder-shown:border placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 focus:border-2 focus:border-red-500 focus:border-t-transparent focus:outline-0 disabled:border-0 disabled:bg-blue-gray-50"
+                              placeholder=" "
+                              required
+                          />
+                          <label
+                              class="before:content[' '] after:content[' '] pointer-events-none absolute left-0 -top-1.5 flex h-full w-full select-none text-[11px] font-normal leading-tight text-blue-gray-400 transition-all before:pointer-events-none before:mt-[6.5px] before:mr-1 before:box-border before:block before:h-1.5 before:w-2.5 before:rounded-tl-md before:border-t before:border-l before:border-blue-gray-200 before:transition-all after:pointer-events-none after:mt-[6.5px] after:ml-1 after:box-border after:block after:h-1.5 after:w-2.5 after:flex-grow after:rounded-tr-md after:border-t after:border-r after:border-blue-gray-200 after:transition-all peer-placeholder-shown:text-sm peer-placeholder-shown:leading-[3.75] peer-placeholder-shown:text-blue-gray-500 peer-placeholder-shown:before:border-transparent peer-placeholder-shown:after:border-transparent peer-focus:text-[11px] peer-focus:leading-tight peer-focus:text-red-500 peer-focus:before:border-t-2 peer-focus:before:border-l-2 peer-focus:before:!border-red-500 peer-focus:after:border-t-2 peer-focus:after:border-r-2 peer-focus:after:!border-red-500 peer-disabled:text-transparent peer-disabled:before:border-transparent peer-disabled:after:border-transparent peer-disabled:peer-placeholder-shown:text-blue-gray-500"
+                          >
+                              Buscar a Cliente
+                          </label>
+                      </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="block w-full overflow-x-auto px-4">
+            <table class="items-center bg-transparent w-full border-collapse">
+              <thead>
+                <tr>
+                  <th class="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">
+                                Id
+                              </th>
+                <th class="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">
+                                Nombre
+                              </th>
+                <th class="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">
+                                Acciones
+                              </th>
+                </tr>
+              </thead>
+
+              <tbody >
+                <tr *ngFor="let cliente of ListClientes">
+                  <th class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-sm whitespace-nowrap p-4 text-left text-blueGray-700 ">
+                  {{cliente.idCliente}}
+                  </th>
+                  <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-sm whitespace-nowrap p-4 ">
+                    {{cliente.nombre}}
+                  </td>
+                  <td class="border-t-0 px-6 align-center border-l-0 border-r-0 text-sm whitespace-nowrap p-4">
+                    <div class="flex gap-4">
+                      <div class="editar">
+                        <!-- EDITAR -->
+                        <a class="group relative inline-block focus:outline-none focus:ring" href="#">
+                          <span
+                            class="absolute inset-0 translate-x-1.5 translate-y-1.5 bg-amarillo/75 transition-transform group-hover:translate-x-0 group-hover:translate-y-0"
+                          ></span>
+                          <span
+                            class="relative inline-block border-2 border-current px-1 py-1 text-sm font-bold uppercase tracking-widest text-secundaryCrimson group-active:text-opacity-75"
+                          >
+                          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill:#590004;"><path d="M19.045 7.401c.378-.378.586-.88.586-1.414s-.208-1.036-.586-1.414l-1.586-1.586c-.378-.378-.88-.586-1.414-.586s-1.036.208-1.413.585L4 13.585V18h4.413L19.045 7.401zm-3-3 1.587 1.585-1.59 1.584-1.586-1.585 1.589-1.584zM6 16v-1.585l7.04-7.018 1.586 1.586L7.587 16H6zm-2 4h16v2H4z"></path></svg>
+                          </span>
+                        </a>
+
+                      </div >
+                      <!-- ELMINAR-->
+                       <div class="eliminar">
+                         <!-- ELIMINAR -->
+                         <a class="group relative inline-block focus:outline-none focus:ring" href="#">
+                          <span
+                            class="absolute inset-0 translate-x-0 translate-y-0 bg-amarillo/75 transition-transform group-hover:translate-x-1.5 group-hover:translate-y-1.5"
+                          ></span>
+
+                          <span
+                            class="relative inline-block border-2 border-current px-1 py-1 text-sm font-bold uppercase tracking-widest text-secundaryCrimson"
+                          >
+
+                          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(89, 0, 4, 1); "><path d="M5 20a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8h2V6h-4V4a2 2 0 0 0-2-2H9a2 2 0 0 0-2 2v2H3v2h2zM9 4h6v2H9zM8 8h9v12H7V8z"></path><path d="M9 10h2v8H9zm4 0h2v8h-2z"></path></svg>
+                          </span>
+                        </a>
+                       </div>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <!-- NUEVO CLIENTE-->
+          <div class="nuevo">
+            <!-- EDITAR -->
+            <a class="group relative inline-block focus:outline-none focus:ring" href="#">
+              <span
+                class="absolute inset-0 translate-x-1.5 translate-y-1.5 bg-amarillo/75 transition-transform group-hover:translate-x-0 group-hover:translate-y-0"
+              ></span>
+              <span
+                class="relative  flex border-2 border-current px-1 py-1 text-sm font-bold uppercase tracking-widest text-secundaryCrimson group-active:text-opacity-75"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill:#590004;"><path d="M19.045 7.401c.378-.378.586-.88.586-1.414s-.208-1.036-.586-1.414l-1.586-1.586c-.378-.378-.88-.586-1.414-.586s-1.036.208-1.413.585L4 13.585V18h4.413L19.045 7.401zm-3-3 1.587 1.585-1.59 1.584-1.586-1.585 1.589-1.584zM6 16v-1.585l7.04-7.018 1.586 1.586L7.587 16H6zm-2 4h16v2H4z"></path></svg>
+                <p>nuevo cliente</p>
+              </span>
+            </a>
+
+          </div >
+          <!-- FORMULARIO PARA CREAR UN NUEVO CLIENTE-->
+          <div class="flex min-h-full justify-center items-center px-6 py-12 lg:px-8">
+            <div class="sm:mx-auto sm:w-full sm:max-w-sm">
+              <img class="mx-auto h-40 w-auto" src="../../assets/imagen_cliente_nuevo.png" alt="Your Company">
+            </div>
+
+            <div class="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
+              <form class="space-y-6" action="#" method="POST">
+                <div>
+                  <div class="flex justify-end">
+                      <p class="font-semibold text-red-500 hover:text-red-400 ">Nombre del Cliente</p>
+                  </div>
+                  <div class="mt-2">
+                    <input name="nombre_cliente" type="text" required class="block w-full rounded-md border-0 bg-white/5 py-1.5 text-white shadow-sm ring-1 ring-inset ring-red-500 focus:ring-2 focus:ring-inset focus:ring-black sm:text-sm sm:leading-6 pl-2">
+                  </div>
+                </div>
+
+                <div>
+                  <button type="submit" class="flex w-full justify-center rounded-md bg-red-500 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-red-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-500">Registrar</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+        <!--FOOTER-->
+        <div>
+          <app-footer/>
+        </div>
+
+
+      </section>
+      </div>
+</div>

@@ -1,1 +1,46 @@
-/* You can add global styles to this file, and also import other style files */
+/*Incluimos las directivas de tailwindcss*/
+/*Directiva base que representa los estilos predeterminados para la pagina*/
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.button{
+  font-family: sans-serif; /* font-sans */
+  font-weight: 500; /* font-medium */
+  text-transform: uppercase; /* uppercase */
+  transition: all 0.2s; /* transition-all */
+  height: 2rem; /* h-8 */
+  max-height: 32px; /* max-h-[32px] */
+  border-radius: 0.5rem; /* rounded-lg */
+  font-size: 0.75rem; /* text-xs */
+  color: white; /* text-white */
+  background-image: linear-gradient(to top right, rgba(255, 255, 0, 0.164), rgba(255, 255, 0, 0.582));
+  box-shadow: 0 4px 6px -1px rgba(255, 255, 255, 0.2), 0 2px 4px -1px rgba(255, 255, 255, 0.1);
+  opacity: 0.85;
+  padding: 4px 14px;
+}
+
+.active button{
+
+background-image: linear-gradient(to top right, rgba(255, 255, 0, 0.164), rgba(255, 255, 0, 0.582));
+
+/* Sombra */
+box-shadow: 0 4px 6px -1px rgba(255, 255, 255, 0.2), 0 2px 4px -1px rgba(255, 255, 255, 0.1);
+
+opacity: 0.85;
+}
+
+.active:hover{
+  box-shadow: 0 4px 10px -1px rgba(255, 255, 255, 0.4);
+}
+
+
+.fondo{
+  background: rgb(31,30,30);
+  background: linear-gradient(106deg, rgba(31,30,30,1) 0%, rgba(89,0,4,1) 48%, rgba(134,27,34,1) 69%, rgba(255,100,114,1) 100%);
+}
+
+
+.isActive{
+  opacity: 1;
+}
