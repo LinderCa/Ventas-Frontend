@@ -1,5 +1,6 @@
 # Descripcion
 Bienvenido este es un proyecto personal de inicio a Angular con el backend en .netCore7
+Para el funcionamiento coompleto es necesario contar con el proyecto fronted y backend
 
 # FrontendAppVentas
 
