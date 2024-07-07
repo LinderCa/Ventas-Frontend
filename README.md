@@ -1,3 +1,6 @@
+# Descripcion
+Bienvenido este es un proyecto personal de inicio a Angular con el backend en .netCore7
+
 # FrontendAppVentas
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.14.
